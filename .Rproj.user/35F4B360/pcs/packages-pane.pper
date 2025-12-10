@@ -1,7 +1,0 @@
-{
-    "installOptions": {
-        "installFromRepository": true,
-        "libraryPath": "/net/home/knenoff/R/04_Rlibrary",
-        "installDependencies": true
-    }
-}
