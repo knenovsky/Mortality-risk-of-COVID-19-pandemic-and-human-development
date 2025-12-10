@@ -1,5 +1,67 @@
-Here are the R Markdown files to run the analysis for the paper ***Mortality risk of COVID-19 pandemic and human development***. The Markdown files in src contain text and code. The code contains the necessary script to rerun the analysis and the text gives information where to download the original data and background information. Running this code is possible with a single core but multiple cores are recommanded (default settings: 30 Cores). Preprocessed data products are avaible via the open science framework (Link)[https://osf.io/gekzp/overview?view_only=9d602f0d3fad45c1829b2f60c4d4c6f0]. Dont hesitate to ask for any further informations.
+# R Markdown Scripts for the Analysis  
+### *Mortality Risk of COVID-19 Pandemic and Human Development*
 
+This repository contains the R Markdown files used to generate the analyses for the study *Mortality risk of COVID-19 pandemic and human development*.  
+All `.Rmd` files in `src/` include both explanatory text and executable code. The scripts reproduce the full analytical workflow, and accompanying notes describe data sources and preprocessing steps.
+
+The analysis can be executed on a single CPU core; however, use of multiple cores is recommended (default: 30 cores).
+
+Preprocessed data products are available via the Open Science Framework (OSF):  
+https://osf.io/gekzp/overview?view_only=9d602f0d3fad45c1829b2f60c4d4c6f0
+
+---
+
+## Input Data  
+Input data files are available on OSF in the folder **`Input_data`**.  
+To run the scripts, either:
+
+1. Copy the `Input_data` folder into the cloned repository, or  
+2. Follow the instructions in the individual `.Rmd` files to download the data manually.
+
+---
+
+## Markdown Scripts
+
+### **01_DimensionReduction.Rmd**  
+Performs Ensemble Isomap (e-Isomap) dimension reduction using the World Development Indicators dataset.
+
+**Main outputs:**  
+- Consolidated WDI dataset  
+- Ten e-Isomap dimensions  
+- Output file: `wdi_data_cons_df`
+
+*Note:* The processed dataset (`01_wdi_data_cons_df_250.csv`) is also available on OSF.
+
+---
+
+### **02_Predictive_performance.Rmd**  
+Evaluates predictive performance across different data-compression approaches, including:  
+- Complete-case analysis  
+- Gap-filled raw data  
+- PCA  
+- Isomap  
+- e-Isomap  
+
+**Main output:**  
+- Summary statistics comparing all compression states
+
+---
+
+### **03_Model_components.Rmd**  
+Combines model components to construct the integrated model used in the publication.
+
+**Main output:**  
+- Final model summary statistics  
+- Output file: `03_XX_Xgboost_E_iso10_models.RDS`
+
+---
+
+### **04_plot_outline.Rmd**  
+Produces the figures included in the publication and additional visualizations relevant to supplementary analyses.
+
+---
+
+For additional information or clarification, please feel free to inquire.
 
 _______ 
 # Abstract
